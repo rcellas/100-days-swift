@@ -1,114 +1,56 @@
-//
-//  main.swift
-//  day-4
-//
-//  Created by BCN MAC 020 on 26/12/24.
-//
+import Foundation
 
-let count = 1...10
-for number in count {
-    print("Number is \(number)")
+func generatePassword() -> String {
+    let letters = ["A", "B", "C"]
+    let numbers = ["1", "2", "3"]
+    let passwordElements = letters + numbers
+    return passwordElements.shuffled().prefix(4).joined()
 }
 
-let albums = ["Red", "1989", "Reputation"]
+func runGame() {
+    let secretPassword = generatePassword()
+    var attempts = 1
+    let passwordElements = ["A", "B", "C", "1", "2", "3"]
 
-for album in albums {
-    print("\(album) is on Apple Music")
-}
+    print("Adivina la contraseña del almacén de Papá Noel.")
 
-print("Players gonna ")
+    while attempts <= 10 {
+        print("Intento: \(attempts)")
+        print("Introduce la contraseña: ", terminator: "")
+        
+        if let input = readLine()?.uppercased() {
+            if input.count != 4 {
+                print("Error: La contraseña debe tener 4 caracteres.")
+                continue
+            }
+            if !input.allSatisfy({ passwordElements.contains(String($0)) }) {
+                print("Error: Sólo se permiten los caracteres \(passwordElements).")
+                continue
+            }
 
-// _: Este es un "comodín" que le dice a Swift que no necesitas usar la variable que normalmente representaría cada valor del rango. Es una forma de decir "ignora esta variable"
-for _ in 1...5 {
-    print("play")
-}
+            if input == secretPassword {
+                print("¡Contraseña correcta! Has descifrado el código del almacén. Feliz Navidad.")
+                break
+            }
 
-var number = 1
+            for (index, character) in input.enumerated() {
+                if character == secretPassword[secretPassword.index(secretPassword.startIndex, offsetBy: index)] {
+                    print("\(character): Correcto")
+                } else if secretPassword.contains(character) {
+                    print("\(character): Presente")
+                } else {
+                    print("\(character): Incorrecto")
+                }
+            }
 
-while number <= 20 {
-    print(number)
-    number += 1
-}
+            attempts += 1
 
-print("Ready or not, here I come!")
-
-repeat {
-    print(number)
-    number += 1
-} while number <= 20
-
-print("Ready or not, here I come!")
-
-while false {
-    print("This is false")
-}
-
-repeat {
-    print("This is false")
-} while false
-
-var countDown = 10
-
-while countDown >= 0 {
-    print(countDown)
-    countDown -= 1
-}
-
-print("Blast off!")
-
-
-while countDown >= 0 {
-    print(countDown)
-
-    if countDown == 4 {
-        print("I'm bored. Let's go now!")
-        break
-    }
-
-    countDown -= 1
-}
-
-for i in 1...10 {
-    for j in 1...10 {
-        let product = i * j
-        print ("\(i) * \(j) is \(product)")
-    }
-}
-
-outerLoop: for i in 1...10 {
-    for j in 1...10 {
-        let product = i * j
-        print ("\(i) * \(j) is \(product)")
-    }
-}
-
-outerLoop: for i in 1...10 {
-    for j in 1...10 {
-        let product = i * j
-        print ("\(i) * \(j) is \(product)")
-
-        if product == 50 {
-            print("It's a bullseye!")
-            break outerLoop
+            if attempts > 10 {
+                print("Lo siento, los 10 intentos para descifrar el código han finalizado.")
+                print("Papá Noel no ha podido entregar los regalos.")
+            }
         }
     }
 }
 
-for i in 1...10 {
-    if i % 2 == 1 {
-        continue
-    }
-
-    print(i)
-}
-
-var counter = 0
-
-while true {
-    print(" ")
-    counter += 1
-
-    if counter == 273 {
-        break
-    }
-}
+runGame()
