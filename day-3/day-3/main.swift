@@ -2,7 +2,7 @@
 //  main.swift
 //  day-3
 //
-//  Created by BCN MAC 020 on 25/12/24.
+//  Created by Rcellas on 25/12/24.
 //
 
 let firstScore = 12
