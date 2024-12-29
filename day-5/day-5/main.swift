@@ -2,7 +2,7 @@
 //  main.swift
 //  day-5
 //
-//  Created by BCN MAC 020 on 26/12/24.
+//  Created by RCellas on 26/12/24.
 //
 
 func printHelp() {
