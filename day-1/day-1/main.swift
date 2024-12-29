@@ -2,7 +2,7 @@
 //  main.swift
 //  day-1
 //
-//  Created by BCN MAC 020 on 24/12/24.
+//  Created by Rcellas on 24/12/24.
 //
 var str0 = "Hello, playground"
 str0 = "Goodbye"
