@@ -2,7 +2,7 @@
 //  main.swift
 //  day-10
 //
-//  Created by BCN MAC 020 on 29/12/24.
+//  Created by Rcellas on 29/12/24.
 //
 
 //  creando clases propias
