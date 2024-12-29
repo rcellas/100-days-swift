@@ -2,7 +2,7 @@
 //  main.swift
 //  day-2
 //
-//  Created by BCN MAC 020 on 24/12/24.
+//  Created by Rcellas on 24/12/24.
 //
 
 // colección de valores que puedan contener duplicados, o si el orden de los elementos es importante
