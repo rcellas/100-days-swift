@@ -2,7 +2,7 @@
 //  main.swift
 //  day-6
 //
-//  Created by BCN MAC 020 on 27/12/24.
+//  Created by Rcellas on 27/12/24.
 //
 
 let driving = {
